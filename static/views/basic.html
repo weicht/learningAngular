@@ -35,15 +35,37 @@
 		<h4 class="list-group-item-heading">{{ someText.message }}</h4>
 	  <a href="#" class="list-group-item">
 		<h4 class="list-group-item-heading">ng-app</h4>
-		<p class="list-group-item-text">View Source and note ng-app on html tag of page.  This tells Angular to control this entire page</p>
+		<p class="list-group-item-text">View Source and note ng-app on html tag of page.  
+		This tells Angular to control this entire page and use a given module for namespace/control</p>
 	  </a>
 	  <a href="#" class="list-group-item">
 		<h4 class="list-group-item-heading">ng-controller</h4>
-		<p class="list-group-item-text">View Source and note ng-controller on body tag of page.
-		This tells Angular to use a specific controller for elements within the body.
+		<p class="list-group-item-text">View Source and note ng-controller tags on the page.
+		This tells Angular to use a specific controller for elements within that section (ie. div).
 		The actual controller is loaded via javascript in the head section.
-		For more complete pages, the controller would be applied to more specific elements of the page.</p>
-	  </a>
+		Multiple controllers may exist in a single controller file within the same namespace.</p>
+      </a>
+	  <a href="#" class="list-group-item">
+		<h4 class="list-group-item-heading">ng-repeat, ng-click</h4>
+		<p class="list-group-item-text">
+		<div ng-repeat="item in beers">
+		  <span>{{$index+1}}. {{item.title}}</span> // <span>{{item.price | currency}}</span>
+		  <button ng-click='remove($index)' class="btn btn-default">Remove</button>
+		</div>
+		  <input ng-model='name'></input>
+		  <input ng-model='price'></input>
+		  <button ng-click='addBeer(name, price)' class="btn btn-default">Add</button>
+		<div>
+		</div>
+		</p>
+      </a>
+	  <a href="#" class="list-group-item">
+		<h4 class="list-group-item-heading">ng-model</h4>
+		<p class="list-group-item-text">
+		{{newBeer}}
+		<form><input ng-model='newBeer'></input></form>
+		</p>
+      </a>
 	</div>
   </div>
   <div class="panel-footer"><a href="/">Back to Index</a></div>

@@ -37,6 +37,23 @@
   <li class="list-group-item">Flask - web server to serve up Angular files and provide RESTful API for data (later)</li>
   <li class="list-group-item">Angular - of course needed.  Pulled in from googleapis</li>
   <li class="list-group-item">Bootstrap - tinkering with as well for style/layout/etc</li>
+  <li class="list-group-item">Code Layout
+<pre>
+learningAngular/
+|-- angular.py               (handles all routes to angular views and REST API)
+|-- static/
+    |-- css/                 (not used)
+    |-- img/                 (not used)
+    |-- js/                  (not used - would be for random js files)
+    |-- lib/                 (not used for angular/bootstrap as we reference via CDNs)
+    |-- views/               (angular view html files)
+        |-- basic.html, etc.
+    |-- controllers/         (angular controller js files)
+        |-- basic.js, etc    
+|-- templates/
+    |-- index.html           (rendered via make_response() so Flask's templating is bypassed)
+</pre>
+  </li>
 </ul>
 		</p>
 	</div>
