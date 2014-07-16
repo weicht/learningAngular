@@ -1,0 +1,73 @@
+<html ng-app='dataApp'>
+<head>
+<title>Learning Angular - Requesting Data</title>
+<!-- Style -->
+	<link href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" rel="stylesheet" />
+
+<!-- Behavior -->
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+    <!-- Use the minimized version when not debugging/learning.  I think there is additional
+    debug output you can get when you use the full version
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+    -->
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>    
+
+<!-- Controllers -->
+    <script src="/static/controllers/requestData.js"></script>
+    
+</head>
+
+<body>
+
+<BR><BR>
+<div class="container theme-showcase" role="main">
+
+<div class="panel panel-default">
+  <div class="panel-body">
+	<div class="list-group">
+    	<div ng-controller="JsonpController">
+	    <h4 class="list-group-item-heading">{{ title }}</h4>
+		  <a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">jsonp</h4>
+			<p class="list-group-item-text">Need to look at the controller file for how $http
+			is used to populate a list of NPR shows.
+			<div ng-repeat="story in shows.story">
+			  <span>{{$index+1}}. Story ID: {{story.id}} // Story Title: {{story.title.$text}}</span> 
+			</div>
+			</p>
+		  </a>
+	    </div>
+    	<div ng-controller="JsonController">
+		  <a href="#" class="list-group-item">
+			<h4 class="list-group-item-heading">json</h4>
+			<p class="list-group-item-text">Need to look at the controller file for how $http
+			is used to populate a list of users from a local RESTful service.
+			Also look at angular.py to see how the RESTful service is returning json.
+			<div ng-repeat="user in users">
+			  <span>{{$index+1}}. {{user.name}}</span> 
+			</div>
+			</p>
+		  </a>
+	    </div>
+	</div>
+  </div>
+  <div class="panel-footer"><a href="/">Back to Index</a></div>
+</div>
+
+
+
+<div id="footer">
+<div class="container"><p class="text-muted">Learning Angular</p></div>
+</div>
+
+</div>
+</body>
+</html>
+
