@@ -34,7 +34,14 @@ def index():
 #### RESTful Services stuff ****
 @app.route('/data/<username>', methods=['GET'])
 def get_user(username):
-    return jsonify( {'user': username} )
+    return jsonify( {'users': [{'id': '1', 'name': 'jonathon goldstein'},
+    						   {'id': '2', 'name': 'howard shackowitz'},
+    						   {'id': '3', 'name': username}]} )
+
+@app.route('/data', methods=['GET'])
+def get_data():
+    return jsonify( {'users': [{'id': '1', 'name': 'jonathon goldstein'},
+    				{'id': '2', 'name': 'howard shackowitz'}]} )
 
 
 
