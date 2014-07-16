@@ -4,3 +4,5 @@ Setup:
 - Flask
 - Angular
 - Bootstrap
+
+Configure learningAngular as a Flask web application.  templates/index.html is the main index listing to navigate to the different samples.
